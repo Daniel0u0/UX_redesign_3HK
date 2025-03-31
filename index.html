@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3 Hong Kong - Homepage</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="index.html" class="btn">Home</a></li>
+      <li><a href="index.html#plans" class="btn">Plans</a></li>
+      <li><a href="support.html" class="btn">Support</a></li>
+      <li><a href="login.html" class="btn">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Subscription Plan Section -->
+  <section id="plans">
+    <h2>Find Your 5G Plan</h2>
+    <div class="plan-filter">
+      <select id="priceFilter">
+        <option value="">Select Price Range</option>
+        <option value="100-200">$100-$200</option>
+        <option value="200-300">$200-$300</option>
+      </select>
+      <button class="btn" id="filterBtn" onclick="filterPlans()">Filter Plans</button>
+    </div>
+    <div id="loadingSpinner" style="display: none;">
+      <div class="spinner"></div>
+    </div>
+    <div id="planResults">
+      <!-- Dynamically load plans here -->
+    </div>
+  </section>
+
+  <!-- Footer for Secondary Links -->
+  <footer>
+    <a href="#">About Us</a> | <a href="#">Careers</a> | <a href="#">Contact</a>
+  </footer>
+
+  <script src="js/homepage.js"></script>
+</body>
+</html>

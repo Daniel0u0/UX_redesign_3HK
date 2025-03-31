@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3 Hong Kong - Register Phone Number</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="index.html" class="btn">Home</a></li>
+      <li><a href="index.html#plans" class="btn">Plans</a></li>
+      <li><a href="support.html" class="btn">Support</a></li>
+      <li><a href="login.html" class="btn">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Registration Form -->
+  <section id="register">
+    <h2>Register Phone Number</h2>
+    <form id="registerForm" onsubmit="return validateForm()">
+      <label for="phone">Phone Number:</label>
+      <input type="text" id="phone" required>
+      <span id="phoneError" style="color: red;"></span><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+      <span id="emailError" style="color: red;"></span><br>
+      <button type="submit" class="btn">Register</button>
+    </form>
+  </section>
+
+  <script src="js/register.js"></script>
+</body>
+</html>
