@@ -303,7 +303,9 @@ p {
   box-shadow: var(--box-shadow);
   overflow: hidden;
   transition: var(--transition);
+  margin-bottom: 1.5rem; /* Add space below each card */
 }
+
 
 .promo-card:hover {
   transform: translateY(-5px);

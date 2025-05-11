@@ -10,6 +10,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
+
+ <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const buttons = document.querySelectorAll(".filter-option");
+      const items = document.querySelectorAll(".catalog-item");
+
+      buttons.forEach(button => {
+        button.addEventListener("click", () => {
+          const brand = button.getAttribute("data-brand");
+
+          items.forEach(item => {
+            const itemBrand = item.getAttribute("data-brand");
+            const match = !brand || itemBrand === brand;
+            item.style.display = match ? "block" : "none";
+          });
+
+          // Highlight active button
+          buttons.forEach(btn => btn.classList.remove("active"));
+          button.classList.add("active");
+        });
+      });
+    });
+  </script>
+  
 <body>
     <header class="header">
         <div class="container">
@@ -111,89 +135,74 @@
                     <div class="filter-group">
                         <span class="filter-label">全部品牌</span>
                         <div class="filter-options">
-                            <span class="filter-option active">3HK</span>
-                            <span class="filter-option">Apple</span>
-                            <span class="filter-option">HMD</span>
-                            <span class="filter-option">HONOR</span>
-                            <span class="filter-option">HUAWEI</span>
-                            <span class="filter-option">Linksys</span>
-                            <span class="filter-option">Nokia</span>
-                            <span class="filter-option">OnePlus</span>
-                            <span class="filter-option">OPPO</span>
+                            <span class="filter-option active" data-brand="">全部品牌</span>
+                            <span class="filter-option" data-brand="Apple">Apple</span>
+                            <span class="filter-option" data-brand="HMD">HMD</span>
+                            <span class="filter-option" data-brand="HONOR">HONOR</span>
+                            <span class="filter-option" data-brand="HUAWEI">HUAWEI</span>
+                            <span class="filter-option" data-brand="Linksys">Linksys</span>
+                            <span class="filter-option" data-brand="Nokia">Nokia</span>
+                            <span class="filter-option" data-brand="OnePlus">OnePlus</span>
+                            <span class="filter-option" data-brand="OPPO">OPPO</span>
                         </div>
                     </div>
-                    <button class="filter-more">更多篩選</button>
                 </div>
                 <div class="catalog-grid">
-                    <div class="catalog-item">
+                    <div class="catalog-item" data-brand="Apple">
                         <div class="catalog-image">
                             <img src="../images/phone-iphone-16-pro.jpg" alt="iPhone 16 Pro">
                         </div>
                         <h3>iPhone 16 Pro</h3>
-                        <button class="expand-btn">+</button>
+                        <a href="#" class="btn btn-primary">立即購買</a>
                     </div>
-                    <div class="catalog-item">
+                    <div class="catalog-item" data-brand="Apple">
                         <div class="catalog-image">
                             <img src="../images/phone-iphone-16-pro-max.jpg" alt="iPhone 16 Pro Max">
                         </div>
                         <h3>iPhone 16 Pro Max</h3>
-                        <button class="expand-btn">+</button>
+                        <a href="#" class="btn btn-primary">立即購買</a>
                     </div>
-                    <div class="catalog-item">
+                    <div class="catalog-item" data-brand="Apple">
                         <div class="catalog-image">
                             <img src="../images/phone-iphone-16.jpg" alt="iPhone 16">
                         </div>
                         <h3>iPhone 16</h3>
-                        <button class="expand-btn">+</button>
+                        <a href="#" class="btn btn-primary">立即購買</a>
                     </div>
-                    <div class="catalog-item">
+                    <div class="catalog-item" data-brand="Apple">
                         <div class="catalog-image">
                             <img src="../images/phone-iphone-16-plus.jpg" alt="iPhone 16 Plus">
                         </div>
                         <h3>iPhone 16 Plus</h3>
-                        <button class="expand-btn">+</button>
+                        <a href="#" class="btn btn-primary">立即購買</a>
                     </div>
-                    <div class="catalog-item">
+                    <div class="catalog-item" data-brand="Apple">
                         <div class="catalog-image">
                             <img src="../images/phone-iphone-16e.jpg" alt="iPhone 16e">
                         </div>
                         <h3>iPhone 16e</h3>
                         <a href="#" class="btn btn-primary">立即購買</a>
                     </div>
-                    <div class="catalog-item">
-                        <div class="catalog-image">
-                            <img src="../images/device-5g-broadband.png" alt="5G Broadband CPE Pro">
-                        </div>
-                        <h3>5G Broadband CPE Pro</h3>
-                        <button class="expand-btn">+</button>
-                    </div>
-                    <div class="catalog-item">
-                        <div class="catalog-image">
-                            <img src="../images/device-5g-broadband-zlt.png" alt="5G Broadband ZLT X25 Max CPE">
-                        </div>
-                        <h3>5G Broadband ZLT X25 Max CPE</h3>
-                        <button class="expand-btn">+</button>
-                    </div>
-                    <div class="catalog-item">
+                    <div class="catalog-item" data-brand="HMD">
                         <div class="catalog-image">
                             <img src="../images/phone-hmd-skyline.jpg" alt="HMD Skyline 5G">
                         </div>
                         <h3>HMD Skyline 5G</h3>
-                        <button class="expand-btn">+</button>
+                        <a href="#" class="btn btn-primary">立即購買</a>
                     </div>
-                    <div class="catalog-item">
+                    <div class="catalog-item" data-brand="HONOR">
                         <div class="catalog-image">
                             <img src="../images/phone-honor-200.jpg" alt="HONOR 200 5G">
                         </div>
                         <h3>HONOR 200 5G</h3>
-                        <button class="expand-btn">+</button>
+                        <a href="#" class="btn btn-primary">立即購買</a>
                     </div>
-                    <div class="catalog-item">
+                    <div class="catalog-item" data-brand="HONOR">
                         <div class="catalog-image">
                             <img src="../images/phone-honor-200-lite.jpg" alt="HONOR 200 Lite 5G">
                         </div>
                         <h3>HONOR 200 Lite 5G</h3>
-                        <button class="expand-btn">+</button>
+                        <a href="#" class="btn btn-primary">立即購買</a>
                     </div>
                 </div>
             </div>
@@ -204,7 +213,7 @@
             <div class="container">
                 <div class="replacement-content">
                     <h2>手機更換服務</h2>
-                    <a href="#" class="btn btn-primary">了解更多</a>
+                    <a href="https://web.three.com.hk/vas/hsservice/index.html?cmpid=web_comnvg_hsservice_220207_nil_nil" class="btn btn-primary">了解更多</a>
                 </div>
             </div>
         </section>
@@ -216,36 +225,36 @@
                 <div class="footer-column">
                     <h3>關於我們</h3>
                     <ul>
-                        <li><a href="#">關於我們</a></li>
-                        <li><a href="#">重要啟事</a></li>
-                        <li><a href="#">傳媒查詢</a></li>
+                        <li><a href="https://web.three.com.hk/about3hk/about/index.html">關於我們</a></li>
+                        <li><a href="https://web.three.com.hk/about3hk/notices/index.html">重要啟事</a></li>
+                        <li><a href="https://web.three.com.hk/about3hk/enq/index.html">傳媒查詢</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>快速鏈接</h3>
                     <ul>
-                        <li><a href="#">我的賬戶</a></li>
-                        <li><a href="#">3Shop</a></li>
-                        <li><a href="#">3Business</a></li>
-                        <li><a href="#">My3 App</a></li>
+                        <li><a href="login.html">我的賬戶</a></li>
+                        <li><a href="https://www.three.com.hk/3Care/chi/info/InfoMap.jsp?lang=chi&cmpid=web_3homefooter_3Shop_220921_nil_nil">3Shop</a></li>
+                        <li><a href="https://web.three.com.hk/3business/index.html">3Business</a></li>
+                        <li><a href="https://web.three.com.hk/my3/index.html?cmpid=web_3homefooter_my3app_230510_nil_tc">My3 App</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>聯絡我們</h3>
                     <ul>
                         <li><a href="#">3服務熱線：1033</a></li>
-                        <li><a href="#">3toTalk 數碼銷售專員</a></li>
-                        <li><a href="#">電郵我們</a></li>
-                        <li><a href="#">3iChat網上支援</a></li>
-                        <li><a href="#">提防詐騙資訊</a></li>
+                        <li><a href="https://api.whatsapp.com/send/?phone=85253332833&text=Hello.+%E6%88%91%E5%96%BA3HK%E7%B6%B2%E7%AB%99%E8%A6%8B%E5%88%B0%E6%9C%89%E5%A5%BD%E5%A4%9A%E5%84%AA%E6%83%A0%EF%BC%8C%E6%83%B3%E4%BA%86%E8%A7%A3%E6%9B%B4%E5%A4%9A%E7%9B%B8%E9%97%9C%E5%84%AA%E6%83%A0%E5%90%8C%E8%B3%87%E8%A8%8A%E3%80%82&type=phone_number&app_absent=0">3toTalk 數碼銷售專員</a></li>
+                        <li><a href="https://www.three.com.hk/3Care/chi/contactus/Contactus.jsp?cmpid=web_3homefooter_email_220921_nil_nil">電郵我們</a></li>
+                        <li><a href="https://www.three.com.hk/3Care/chi/contactus/Contactus.jsp?cmpid=web_3homefooter_email_220921_nil_nil">3iChat網上支援</a></li>
+                        <li><a href="https://web.three.com.hk/antiscam2023/home/index.html?cmpid=web_3homefooter_antiscam2023_230201_nil_tc">提防詐騙資訊</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>關注我們</h3>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><img src="../images/facebok.png" alt="Facebook"></a>
-                        <a href="#" aria-label="Instagram"><img src="../images/IG.jpg" alt="Instagram"></a>
-                        <a href="#" aria-label="LinkedIn"><img src="../images/linkedin.png" alt="LinkedIn"></a>
+                        <a href="https://www.facebook.com/threeHK/" aria-label="Facebook"><img src="../images/facebook.png" alt="Facebook"></a>
+                        <a href="https://www.instagram.com/3hongkong/?ref=badge" aria-label="Instagram"><img src="../images/IG.jpg" alt="Instagram"></a>
+                        <a href="https://hk.linkedin.com/company/hthk" aria-label="LinkedIn"><img src="../images/linkedin.png" alt="LinkedIn"></a>
                     </div>
                     <h3 class="download-title">下載My3 App</h3>
                     <div class="app-download">
@@ -256,12 +265,14 @@
             <div class="footer-bottom">
                 <p class="registration">貴金屬及寶石A類註冊交易商(註冊號碼：A-B-24-07-07851)</p>
                 <div class="footer-legal">
-                    <a href="#">條款及細則</a> | <a href="#">私隱政策</a> | <a href="#">免責條款</a>
+                    <a href="https://web.three.com.hk/terms/is/index.html">條款及細則</a> | 
+                    <a href="https://web.three.com.hk/terms/privacypolicy/index.html">私隱政策</a> | 
+                    <a href="https://web.three.com.hk/terms/wdncn/index.html">免責條款</a>
                 </div>
                 <p class="copyright">© 3香港 | Vodafone及Conexus合作夥伴</p>
                 <div class="footer-logo">
                     <img src="../images/logo-ckh.png" alt="長江和記實業成員" class="ckh-logo">
-                    <p>長江和記實業成員</p>
+                    <a href="https://www.ckh.com.hk/tc/global/home.php"><p>長江和記實業成員</p></a>
                 </div>
             </div>
         </div>
